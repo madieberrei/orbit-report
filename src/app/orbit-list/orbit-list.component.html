@@ -1,0 +1,23 @@
+<h3>Orbit Report</h3>
+<table>
+   <tr class="header-row">
+       <!-- 7.1 Add an Angular click handler -->
+      <th (click)= "sort('name')" class="sortable">Name</th>
+      <!-- 7.2 Add an Angular click handler -->
+      <th (click)= "sort('type')" class="sortable">Type</th>
+      <th>Operational</th>
+      <th>Orbit Type</th>
+      <th>Launch Date</th>
+   </tr>
+   <!--4.1 use *ngFor to loop over the satellites array-->
+   <tr *ngFor= "let item of satellites">
+       <td>{{item.name}}</td>
+       <!--6.2 Use shouldShowWarning to add the warning CSS class-->
+       <td [class.warning]= "item.shouldShowWarning()">{{item.type}}</td>
+       <td>{{item.operational}}</td>
+       <td>{{item.orbitType}}</td>
+       <td>{{item.launchDate}}</td>
+
+   </tr>
+
+</table>
